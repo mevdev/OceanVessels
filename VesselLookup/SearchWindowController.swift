@@ -24,6 +24,7 @@ class SearchWindowController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var ccsbtCheck: NSButton!
     @IBOutlet weak var euroCheck: NSButton!
     @IBOutlet weak var ffaCheck: NSButton!
+    @IBOutlet weak var statusLabel: NSTextField!
     
     var infoWindows: [VesselWindowController] = [VesselWindowController]()
     
@@ -31,12 +32,22 @@ class SearchWindowController: NSViewController, NSWindowDelegate {
         super.awakeFromNib()
             self.backgroundView.image = NSImage(named: "dark_background")
             self.iconView.image = NSImage(named: "icon_white")
-//            turnControlTextWhite
+        self.loadUP()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func loadUP() {
         
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserverForName(kUpdate, object: nil, queue: nil) { notification in
+            print("\(notification.name): \(notification.userInfo ?? [:])")
+            if let str:NSString = notification.object as? NSString {
+                dispatch_async(dispatch_get_main_queue(),{                    
+                self.statusLabel.stringValue = str as String
+                })
+
+            }
+        }
+
         self.turnControlTextWhite(iotcCheck)
         self.turnControlTextWhite(wcpfcCheck)
         self.turnControlTextWhite(alaskaCheck)
@@ -45,6 +56,7 @@ class SearchWindowController: NSViewController, NSWindowDelegate {
         self.turnControlTextWhite(ffaCheck)
         
     }
+
     
     func turnControlTextWhite(control: NSButton) {
         //TODO: make this work please.

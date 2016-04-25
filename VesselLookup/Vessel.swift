@@ -10,6 +10,8 @@ import Foundation
 import RealmSwift
 import SwiftCSV
 
+let kUpdate = "update"
+
 class Vessel: Object {
     dynamic var name = ""
     dynamic var nameLowerCase = ""
@@ -66,36 +68,66 @@ class Source: Object {
         dispatch_async(backgroundQueue, {
 
             let realm = try! Realm()
-//            try! realm.write({
-//                realm.deleteAll() //start this off right.
-//            })            
-
-//            importALASKA()
-//            print("vessel count: \(realm.objects(Vessel).count)")
-
-//            importWCPFC()
-//            print("vessel count: \(realm.objects(Vessel).count)")
-
-//            importIOTC()
-//            print("vessel count: \(realm.objects(Vessel).count)")
-
-
-
+            let loaded = NSUserDefaults.standardUserDefaults().boolForKey("initial").boolValue
             
+            if !loaded {
+                notify(infoStr: "Deleting Old Objects")
+                try! realm.write({
+                    realm.deleteAll() //start this off right.
+                })
+                notify(infoStr: "Staring Importing")
+                
+                insertSources()
+
+                importALASKA()
+                let infoStr1 = "ALASKA count: \(realm.objects(Vessel).filter("sourceString == %@","alaska").count)"
+                notify(infoStr: infoStr1)
+
+                
+                importWCPFC()
+                let infoStr2 = "WCPFC count: \(realm.objects(Vessel).filter("sourceString == %@","wcpfc").count)"
+                notify(infoStr: infoStr2)
+                
+                importIOTC()
+                let infoStr3 = "IOTC count: \(realm.objects(Vessel).filter("sourceString == %@","iotc").count). Finished."
+                notify(infoStr: infoStr3)
+
+                
+                let prefs = NSUserDefaults.standardUserDefaults()
+                prefs.setBool(true, forKey: "initial")
+                prefs.synchronize()
+            }
         })
     }
     
-    static func importALASKA() { //source: Source) {
-        print("starting alaska")
+    static func notify(infoStr infoStr: String) {
+        NSNotificationCenter.defaultCenter().postNotificationName(kUpdate, object: infoStr)
+        print(infoStr)
+    }
+    
+    static func insertSources() {
         let realm = try! Realm()
-        
+
         let aSource = Source()
         aSource.sourceString = "alaska"
         aSource.title = "CFEC - Alaska Commercial Fisheries Entry Commission"
+    
         try! realm.write {
             realm.add(aSource)
         }
+    }
 
+
+    
+    static func getSource(source: String) -> Source? {
+        let realm = try! Realm()
+        return realm.objects(Source).filter("sourceString == %@",source).first!
+    }
+
+    static func importALASKA() { //source: Source) {
+        print("starting alaska")
+        let realm = try! Realm()
+        let kSourceString = "alaska"
         do {
             let realm = try! Realm()
             let path = NSBundle.mainBundle().pathForResource("ALASKA", ofType: "csv")
@@ -107,7 +139,7 @@ class Source: Object {
                 
                 if let shipName = dict["Vessel Name"] {
                     let owner = (dict["Owner Name"] != nil) ? dict["Owner Name"]! : "Unlisted"
-                    let ship = Vessel(name: shipName, owner: owner, sourceString: "alaska", type: "Fishing")
+                    let ship = Vessel(name: shipName, owner: owner, sourceString: kSourceString, type: "Fishing")
                     ship.nameLowerCase = shipName.lowercaseString
                     //record params.
                     let exclude = ["Vessel Name","Owner Name"]
@@ -136,7 +168,8 @@ class Source: Object {
             print("what errors")
         }
         try! realm.write {
-            aSource.imported = true
+//            aSource.imported = true
+            //go through and mark all of the good ones to prevent dupes. oh wells.
         }
         print("alaska processed")
     }

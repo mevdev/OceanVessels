@@ -7,8 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="VesselWindowController" customModule="Ocean_Vessels" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="C4z-0N-oxk" id="syO-Ai-tIV"/>
                 <outlet property="infoText" destination="TlY-OK-jQL" id="eHu-HR-RNj"/>
                 <outlet property="ownerText" destination="dGW-SF-rhk" id="EJZ-vI-ny6"/>
+                <outlet property="sourceText" destination="LP8-hR-juu" id="PlY-vg-WIP"/>
                 <outlet property="vesselText" destination="aeX-eD-IZa" id="iGA-K4-7Kc"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="1Uo-6V-OXy"/>
             </connections>
@@ -18,18 +20,20 @@
         <window title="Vessel Info" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="534" height="624"/>
+            <rect key="contentRect" x="196" y="240" width="566" height="624"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <value key="minSize" type="size" width="566" height="624"/>
+            <value key="maxSize" type="size" width="566" height="624"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="534" height="624"/>
+                <rect key="frame" x="0.0" y="0.0" width="566" height="624"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4z-0N-oxk">
-                        <rect key="frame" x="0.0" y="-94" width="534" height="718"/>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4z-0N-oxk">
+                        <rect key="frame" x="-60" y="0.0" width="626" height="624"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="dark_background" id="6na-0m-aNX"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGW-SF-rhk">
-                        <rect key="frame" x="23" y="536" width="152" height="27"/>
+                        <rect key="frame" x="23" y="536" width="493" height="27"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Owner / Operator" id="0Be-cr-kHY">
                             <font key="font" metaFont="system" size="15"/>
                             <color key="textColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -37,7 +41,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeX-eD-IZa">
-                        <rect key="frame" x="18" y="561" width="129" height="31"/>
+                        <rect key="frame" x="18" y="561" width="498" height="31"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Vessel Name" id="ljZ-GJ-Jbl">
                             <font key="font" metaFont="system" size="20"/>
                             <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -45,20 +49,20 @@
                         </textFieldCell>
                     </textField>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-YV-0wb">
-                        <rect key="frame" x="20" y="25" width="494" height="503"/>
+                        <rect key="frame" x="20" y="25" width="526" height="503"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="IqB-0t-Gnr">
-                            <rect key="frame" x="1" y="1" width="492" height="501"/>
+                            <rect key="frame" x="1" y="1" width="524" height="501"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="TlY-OK-jQL">
-                                    <rect key="frame" x="0.0" y="0.0" width="492" height="501"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="524" height="501"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="492" height="501"/>
-                                    <size key="maxSize" width="513" height="10000000"/>
+                                    <size key="minSize" width="524" height="501"/>
+                                    <size key="maxSize" width="670" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="492" height="501"/>
-                                    <size key="maxSize" width="513" height="10000000"/>
+                                    <size key="minSize" width="524" height="501"/>
+                                    <size key="maxSize" width="670" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
@@ -68,26 +72,34 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fO3-2y-6YX">
-                            <rect key="frame" x="477" y="1" width="16" height="501"/>
+                            <rect key="frame" x="509" y="1" width="16" height="501"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LP8-hR-juu">
+                        <rect key="frame" x="262" y="544" width="266" height="27"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="Source" id="O1e-eR-jcZ">
+                            <font key="font" metaFont="system" size="15"/>
+                            <color key="textColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="C4z-0N-oxk" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="1WD-tn-RCQ"/>
+                    <constraint firstItem="C4z-0N-oxk" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-60" id="7Fl-yQ-M6k"/>
                     <constraint firstItem="K2u-YV-0wb" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="94B-Bu-OIl"/>
-                    <constraint firstItem="C4z-0N-oxk" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="HCg-6A-ijC"/>
+                    <constraint firstAttribute="trailing" secondItem="C4z-0N-oxk" secondAttribute="trailing" id="995-CR-uSk"/>
                     <constraint firstAttribute="bottom" secondItem="K2u-YV-0wb" secondAttribute="bottom" constant="25" id="Iai-5k-zVv"/>
                     <constraint firstItem="K2u-YV-0wb" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="96" id="ImV-06-f57"/>
                     <constraint firstAttribute="trailing" secondItem="K2u-YV-0wb" secondAttribute="trailing" constant="20" id="L4w-Aj-pAf"/>
-                    <constraint firstItem="C4z-0N-oxk" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="ex3-z0-DA5"/>
-                    <constraint firstItem="C4z-0N-oxk" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="wCE-cq-OqV"/>
+                    <constraint firstItem="C4z-0N-oxk" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="bC2-eO-mYT"/>
+                    <constraint firstAttribute="bottom" secondItem="C4z-0N-oxk" secondAttribute="bottom" id="yEi-j3-hZq"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="iIn-SK-yoo"/>
             </connections>
-            <point key="canvasLocation" x="263" y="424"/>
+            <point key="canvasLocation" x="55" y="448"/>
         </window>
         <customView id="872-Xj-fxN">
             <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>

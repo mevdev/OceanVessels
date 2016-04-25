@@ -14,25 +14,32 @@ import RealmSwift
 class VesselWindowController: NSWindowController, NSWindowDelegate {
     var vessel: Vessel?
     
+    @IBOutlet weak var backgroundView: NSImageView!
     @IBOutlet weak var vesselText: NSTextField!
     @IBOutlet weak var ownerText: NSTextField!
-    
     @IBOutlet var infoText: NSTextView!
     
+    @IBOutlet weak var sourceText: NSTextField!
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundView.imageScaling = .ScaleProportionallyUpOrDown
         if let ves = vessel {
         vesselText.stringValue = ves.name
         ownerText.stringValue = ves.owner
+        let source = getSource(ves.sourceString)
+        sourceText.stringValue = source!.title
         var paramsText = ""
             for p in ves.params {
-                paramsText += "\(p.title)\(p.value)\n"
+                paramsText += "\(p.title):  \(p.value)\n"
             }
         infoText.string = paramsText
         }
     }
 
-
+    func getSource(source: String) -> Source? {
+        let realm = try! Realm()
+        return realm.objects(Source).filter("sourceString == %@",source).first!
+    }
     
     
 }
