@@ -13,15 +13,17 @@ import RealmSwift
 class ResultsWindowController: NSWindowController, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate {
     
     var vesselResults: Results<Vessel>?
-    @IBOutlet var resultWindow: NSWindow!
     @IBOutlet weak var resultsTableView: NSTableView!
+    var searchString: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.window?.title = "Search: \(searchString)"
     }
+
+
     
     // MARK - TableView Methods
-    
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return vesselResults!.count
     }

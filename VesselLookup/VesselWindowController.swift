@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import Cocoa
+import Quartz
+import RealmSwift
+
+class VesselWindowController: NSWindowController, NSWindowDelegate {
+    var vessel: Vessel?
+    
+    
+}

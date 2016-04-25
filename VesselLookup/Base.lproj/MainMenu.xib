@@ -670,30 +670,74 @@
         <window title="VesselLookup" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="454" height="311"/>
+            <rect key="contentRect" x="335" y="390" width="512" height="505"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <value key="minSize" type="size" width="374" height="231"/>
-            <value key="maxSize" type="size" width="374" height="231"/>
+            <value key="minSize" type="size" width="454" height="311"/>
+            <value key="maxSize" type="size" width="454" height="311"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="454" height="311"/>
+                <rect key="frame" x="0.0" y="0.0" width="512" height="505"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EbZ-XT-Yd3">
+                        <rect key="frame" x="0.0" y="-7" width="512" height="512"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="dark_background" id="hKD-8v-7IR"/>
+                    </imageView>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1l-hk-Zly">
-                        <rect key="frame" x="156" y="177" width="61" height="18"/>
-                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="e1j-cJ-0gi">
+                        <rect key="frame" x="193" y="190" width="52" height="18"/>
+                        <buttonCell key="cell" type="check" title="IOTC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="e1j-cJ-0gi">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qzb-k0-TLG">
-                        <rect key="frame" x="156" y="153" width="61" height="18"/>
-                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hgr-yc-hqK">
+                        <rect key="frame" x="193" y="170" width="69" height="18"/>
+                        <buttonCell key="cell" type="check" title="WCPFC" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hgr-yc-hqK">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAo-hB-6df">
+                        <rect key="frame" x="143" y="275" width="238" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="    vessel name" bezelStyle="round" id="Xah-sd-eaS">
+                            <font key="font" metaFont="system" size="16"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8s-Zl-y97">
+                        <rect key="frame" x="212" y="343" width="100" height="100"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="icon_white" id="Ksk-P5-EVb"/>
+                    </imageView>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-8X-WCt">
+                        <rect key="frame" x="193" y="150" width="73" height="18"/>
+                        <buttonCell key="cell" type="check" title="ALASKA" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0lc-Wt-PVx">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xJ-la-Izr">
+                        <rect key="frame" x="278" y="190" width="66" height="18"/>
+                        <buttonCell key="cell" type="check" title="CCSBT" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WY2-AN-4Wi">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-wC-B9h">
+                        <rect key="frame" x="278" y="170" width="45" height="18"/>
+                        <buttonCell key="cell" type="check" title="FFA" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ep2-0K-HVi">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-TR-blQ">
+                        <rect key="frame" x="278" y="150" width="58" height="18"/>
+                        <buttonCell key="cell" type="check" title="EURO" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qso-QB-gAV">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-b0-CLG">
-                        <rect key="frame" x="124" y="206" width="125" height="32"/>
+                        <rect key="frame" x="206" y="227" width="125" height="32"/>
                         <buttonCell key="cell" type="push" title="Search" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hps-vV-J1J">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -702,27 +746,13 @@
                             <action selector="searchAction:" target="XTv-JF-nkw" id="pp9-iv-Cyk"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glc-VN-LRC">
-                        <rect key="frame" x="141" y="274" width="92" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vessel Lookup" id="qjO-ZI-5GV">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAo-hB-6df">
-                        <rect key="frame" x="120" y="239" width="135" height="27"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="vessel name" bezelStyle="round" id="Xah-sd-eaS">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="deviceWhite"/>
-                        </textFieldCell>
-                    </textField>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zvs-tv-M1z">
-                        <rect key="frame" x="257" y="46" width="96" height="79"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="7Zo-1w-ywd"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="EbZ-XT-Yd3" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="4Qw-F9-cm3"/>
+                    <constraint firstItem="EbZ-XT-Yd3" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="CVc-t1-Aql"/>
+                    <constraint firstAttribute="trailing" secondItem="EbZ-XT-Yd3" secondAttribute="trailing" id="pyc-Im-U15"/>
+                    <constraint firstAttribute="bottom" secondItem="EbZ-XT-Yd3" secondAttribute="bottom" constant="-7" id="qZG-uf-Bqj"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="XTv-JF-nkw" id="Qv9-Q1-t0p"/>
@@ -735,9 +765,21 @@
         </drawer>
         <customObject id="XTv-JF-nkw" customClass="SearchWindowController" customModule="Ocean_Vessels" customModuleProvider="target">
             <connections>
+                <outlet property="alaskaCheck" destination="hfg-8X-WCt" id="HFM-Hx-cDT"/>
+                <outlet property="backgroundView" destination="EbZ-XT-Yd3" id="veU-Ix-LwL"/>
+                <outlet property="ccsbtCheck" destination="2xJ-la-Izr" id="kfY-T7-0mW"/>
+                <outlet property="euroCheck" destination="tgt-TR-blQ" id="cwW-58-Fiu"/>
+                <outlet property="ffaCheck" destination="hqy-wC-B9h" id="kC3-8T-MUN"/>
+                <outlet property="iconView" destination="l8s-Zl-y97" id="XRJ-Af-jFh"/>
+                <outlet property="iotcCheck" destination="m1l-hk-Zly" id="jaf-BH-oOj"/>
                 <outlet property="searchField" destination="gAo-hB-6df" id="2nU-b6-Mvh"/>
                 <outlet property="searchWindow" destination="QvC-M9-y7g" id="bi0-8F-NCN"/>
+                <outlet property="wcpfcCheck" destination="Qzb-k0-TLG" id="tcV-XX-1xw"/>
             </connections>
         </customObject>
     </objects>
+    <resources>
+        <image name="dark_background" width="512" height="512"/>
+        <image name="icon_white" width="512" height="512"/>
+    </resources>
 </document>
