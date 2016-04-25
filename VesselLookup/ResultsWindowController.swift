@@ -16,6 +16,8 @@ class ResultsWindowController: NSWindowController, NSTableViewDataSource, NSTabl
     @IBOutlet weak var resultsTableView: NSTableView!
     var searchString: String = ""
     
+    var vesselWindow: VesselWindowController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.window?.title = "Search: \(searchString)"
@@ -53,9 +55,16 @@ class ResultsWindowController: NSWindowController, NSTableViewDataSource, NSTabl
 
     @IBAction func openAction(sender: NSButton) {
         let row = self.resultsTableView.rowForView(sender.superview!)
-        print("open \(row)")
+        //print("open \(row)")        
+        let selectedVessel = self.vesselResults![row]
+        let infoW = VesselWindowController(windowNibName:"VesselInfoWindow")
+        infoW.vessel = selectedVessel
+        infoW.showWindow(nil)
+        self.vesselWindow = infoW
+
     }
     
+
 
 //    -(IBAction)downloadButtonClicked:(id)sender {
 //    //do the stuffs.

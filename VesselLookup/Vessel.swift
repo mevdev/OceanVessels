@@ -88,6 +88,7 @@ class Source: Object {
     static func importALASKA() { //source: Source) {
         print("starting alaska")
         let realm = try! Realm()
+        
         let aSource = Source()
         aSource.sourceString = "alaska"
         aSource.title = "CFEC - Alaska Commercial Fisheries Entry Commission"

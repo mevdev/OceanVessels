@@ -5,20 +5,31 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="VesselWindowController" customModule="Ocean_Vessels" customModuleProvider="target">
+            <connections>
+                <outlet property="infoText" destination="TlY-OK-jQL" id="eHu-HR-RNj"/>
+                <outlet property="ownerText" destination="dGW-SF-rhk" id="EJZ-vI-ny6"/>
+                <outlet property="vesselText" destination="aeX-eD-IZa" id="iGA-K4-7Kc"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="1Uo-6V-OXy"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Vessel Info" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="534" height="718"/>
+            <rect key="contentRect" x="196" y="240" width="534" height="624"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="534" height="718"/>
+                <rect key="frame" x="0.0" y="0.0" width="534" height="624"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4z-0N-oxk">
+                        <rect key="frame" x="0.0" y="-94" width="534" height="718"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="dark_background" id="6na-0m-aNX"/>
+                    </imageView>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGW-SF-rhk">
-                        <rect key="frame" x="23" y="630" width="152" height="27"/>
+                        <rect key="frame" x="23" y="536" width="152" height="27"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Owner / Operator" id="0Be-cr-kHY">
                             <font key="font" metaFont="system" size="15"/>
                             <color key="textColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -26,26 +37,57 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeX-eD-IZa">
-                        <rect key="frame" x="18" y="655" width="129" height="31"/>
+                        <rect key="frame" x="18" y="561" width="129" height="31"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Vessel Name" id="ljZ-GJ-Jbl">
                             <font key="font" metaFont="system" size="20"/>
                             <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4z-0N-oxk">
-                        <rect key="frame" x="0.0" y="0.0" width="534" height="718"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="dark_background" id="6na-0m-aNX"/>
-                    </imageView>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-YV-0wb">
+                        <rect key="frame" x="20" y="25" width="494" height="503"/>
+                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="IqB-0t-Gnr">
+                            <rect key="frame" x="1" y="1" width="492" height="501"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="TlY-OK-jQL">
+                                    <rect key="frame" x="0.0" y="0.0" width="492" height="501"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="492" height="501"/>
+                                    <size key="maxSize" width="513" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="492" height="501"/>
+                                    <size key="maxSize" width="513" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Iol-3a-Cig">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fO3-2y-6YX">
+                            <rect key="frame" x="477" y="1" width="16" height="501"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="C4z-0N-oxk" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="1WD-tn-RCQ"/>
+                    <constraint firstItem="K2u-YV-0wb" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="94B-Bu-OIl"/>
                     <constraint firstItem="C4z-0N-oxk" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="HCg-6A-ijC"/>
+                    <constraint firstAttribute="bottom" secondItem="K2u-YV-0wb" secondAttribute="bottom" constant="25" id="Iai-5k-zVv"/>
+                    <constraint firstItem="K2u-YV-0wb" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="96" id="ImV-06-f57"/>
+                    <constraint firstAttribute="trailing" secondItem="K2u-YV-0wb" secondAttribute="trailing" constant="20" id="L4w-Aj-pAf"/>
                     <constraint firstItem="C4z-0N-oxk" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="ex3-z0-DA5"/>
                     <constraint firstItem="C4z-0N-oxk" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="wCE-cq-OqV"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="263" y="471"/>
+            <connections>
+                <outlet property="delegate" destination="-2" id="iIn-SK-yoo"/>
+            </connections>
+            <point key="canvasLocation" x="263" y="424"/>
         </window>
         <customView id="872-Xj-fxN">
             <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>

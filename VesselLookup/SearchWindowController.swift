@@ -47,6 +47,7 @@ class SearchWindowController: NSViewController, NSWindowDelegate {
     }
     
     func turnControlTextWhite(control: NSButton) {
+        //TODO: make this work please.
         let attString = NSMutableAttributedString(attributedString: control.attributedTitle)
         let title: NSString = control.title
         let range = NSMakeRange(0, title.length);

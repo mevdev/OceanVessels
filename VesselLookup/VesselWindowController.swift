@@ -14,5 +14,25 @@ import RealmSwift
 class VesselWindowController: NSWindowController, NSWindowDelegate {
     var vessel: Vessel?
     
+    @IBOutlet weak var vesselText: NSTextField!
+    @IBOutlet weak var ownerText: NSTextField!
+    
+    @IBOutlet var infoText: NSTextView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if let ves = vessel {
+        vesselText.stringValue = ves.name
+        ownerText.stringValue = ves.owner
+        var paramsText = ""
+            for p in ves.params {
+                paramsText += "\(p.title)\(p.value)\n"
+            }
+        infoText.string = paramsText
+        }
+    }
+
+
+    
     
 }
