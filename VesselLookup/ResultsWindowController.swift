@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import Cocoa
+
+class ResultsWindowController: NSViewController {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+    }
+
+}

@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (3.3.1)
+  - Realm (0.99.0):
+    - Realm/Headers (= 0.99.0)
+  - Realm/Headers (0.99.0)
+  - RealmSwift (0.99.0):
+    - Realm (= 0.99.0)
+  - SwiftCSV (0.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - RealmSwift
+  - SwiftCSV
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Realm: cf275f109b94e5399896960c90285a043edb3d56
+  RealmSwift: f40e5634bbc74f063163561d02acc4aa040d40a5
+  SwiftCSV: 8b64b738fc54567d229acb17ce6d584e0dd27560
+
+COCOAPODS: 0.39.0
