@@ -31,7 +31,7 @@ class SearchWindowController: NSViewController, NSWindowDelegate {
         let realm = try! Realm()
         
         let searchString = searchField.stringValue
-        let results = realm.objects(Vessel).filter("name CONTAINS %@", searchString)
+        let results = realm.objects(Vessel).filter("name CONTAINS[c] %@", searchString)
         print(" results count:\(results.count)")
     }
     

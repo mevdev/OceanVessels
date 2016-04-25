@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8040BA951CCDFA2A00FC7EB3 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040BA941CCDFA2A00FC7EB3 /* ResultsCell.swift */; };
 		80BA46751CCBE173001A31A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA46741CCBE173001A31A2 /* AppDelegate.swift */; };
 		80BA46771CCBE173001A31A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BA46761CCBE173001A31A2 /* Assets.xcassets */; };
 		80BA467A1CCBE173001A31A2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BA46781CCBE173001A31A2 /* MainMenu.xib */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		3438C52C6822E27E73A0D56B /* Pods-VesselLookup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VesselLookup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VesselLookup/Pods-VesselLookup.debug.xcconfig"; sourceTree = "<group>"; };
+		8040BA941CCDFA2A00FC7EB3 /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		80BA46711CCBE173001A31A2 /* Ocean Vessels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ocean Vessels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BA46741CCBE173001A31A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80BA46761CCBE173001A31A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8040BA931CCDFA0900FC7EB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8040BA941CCDFA2A00FC7EB3 /* ResultsCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		80BA46681CCBE173001A31A2 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 				80BA468D1CCC89F3001A31A2 /* Models */,
 				80BA46901CCC9D62001A31A2 /* Files */,
 				80BA46891CCC8101001A31A2 /* View Controllers */,
+				8040BA931CCDFA0900FC7EB3 /* Views */,
 				80BA467B1CCBE173001A31A2 /* Info.plist */,
 			);
 			path = VesselLookup;
@@ -289,6 +300,7 @@
 			files = (
 				80BA46751CCBE173001A31A2 /* AppDelegate.swift in Sources */,
 				80BA468F1CCC8C36001A31A2 /* Vessel.swift in Sources */,
+				8040BA951CCDFA2A00FC7EB3 /* ResultsCell.swift in Sources */,
 				80BA46881CCC7854001A31A2 /* VesselWindowController.swift in Sources */,
 				80BA46861CCC76FD001A31A2 /* ResultsWindowController.swift in Sources */,
 				80BA46821CCC74E8001A31A2 /* SearchWindowController.swift in Sources */,
