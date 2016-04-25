@@ -66,19 +66,18 @@ class Source: Object {
         dispatch_async(backgroundQueue, {
 
             let realm = try! Realm()
-            try! realm.write({
-                realm.deleteAll() //start this off right.
-            })
-            
+//            try! realm.write({
+//                realm.deleteAll() //start this off right.
+//            })            
 
 //            importALASKA()
 //            print("vessel count: \(realm.objects(Vessel).count)")
 
-            importWCPFC()
-            print("vessel count: \(realm.objects(Vessel).count)")
+//            importWCPFC()
+//            print("vessel count: \(realm.objects(Vessel).count)")
 
-            importIOTC()
-            print("vessel count: \(realm.objects(Vessel).count)")
+//            importIOTC()
+//            print("vessel count: \(realm.objects(Vessel).count)")
 
 
 

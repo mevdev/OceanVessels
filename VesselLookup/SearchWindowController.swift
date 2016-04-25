@@ -10,20 +10,15 @@ import Foundation
 import Cocoa
 import RealmSwift
 
-class SearchWindowController: NSViewController, NSWindowDelegate {
+class SearchWindowController: NSViewController {
 
-    @IBOutlet weak var searchWindow: NSWindow!
     @IBOutlet weak var searchField: NSTextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-    }
-    
+        
     // MARK: Action Methods
     
     @IBAction func searchAction(sender: AnyObject) {
@@ -33,6 +28,11 @@ class SearchWindowController: NSViewController, NSWindowDelegate {
         let searchString = searchField.stringValue
         let results = realm.objects(Vessel).filter("name CONTAINS[c] %@", searchString)
         print(" results count:\(results.count)")
+        
+        let resultsWindow = ResultsWindowController(windowNibName:"ResultsWindow")
+        resultsWindow.vesselResults = results
+        resultsWindow.showWindow(nil)
+        
     }
     
     

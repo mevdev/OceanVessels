@@ -8,27 +8,22 @@
 
 import Foundation
 import Cocoa
+import RealmSwift
 
-class ResultsWindowController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+class ResultsWindowController: NSWindowController, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate {
     
+    var vesselResults: Results<Vessel>?
+    @IBOutlet var resultWindow: NSWindow!
     @IBOutlet weak var resultsTableView: NSTableView!
-    
-    var mainArray: [String] = ["asdf","interasfd","asdfasdf","abcdefg"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-    }
-    
     
     // MARK - TableView Methods
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return mainArray.count
+        return vesselResults!.count
     }
 
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -37,12 +32,14 @@ class ResultsWindowController: NSViewController, NSTableViewDataSource, NSTableV
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell: ResultsCell = tableView.makeViewWithIdentifier("resultCell", owner: self) as! ResultsCell
-        cell.nameLabel.stringValue = "Name here pls"
+        cell.nameLabel.stringValue = vesselResults![row].name
+        cell.ownerLabel.stringValue = vesselResults![row].owner
         cell.openButton.tag = row
+        return cell
     }
 
     @IBAction func openAction(sender: NSButton) {
-        let row = self.resultsTableView.rowForView(sender.superview)
+        let row = self.resultsTableView.rowForView(sender.superview!)
         print("open \(row)")
     }
     

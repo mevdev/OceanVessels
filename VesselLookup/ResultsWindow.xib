@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ResultsWindowController" customModule="Ocean_Vessels" customModuleProvider="target">
             <connections>
+                <outlet property="resultWindow" destination="QvC-M9-y7g" id="8fL-lV-99k"/>
                 <outlet property="resultsTableView" destination="6cG-SQ-RYe" id="Rf8-he-vFC"/>
             </connections>
         </customObject>
@@ -78,6 +79,11 @@
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
+                                                    <connections>
+                                                        <outlet property="nameLabel" destination="MmT-qB-lLP" id="MtL-XY-YF9"/>
+                                                        <outlet property="openButton" destination="JoP-dV-nkV" id="x3X-uU-J7H"/>
+                                                        <outlet property="ownerLabel" destination="BLg-af-qS6" id="hsC-qf-8ga"/>
+                                                    </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
@@ -101,14 +107,10 @@
                     </scrollView>
                 </subviews>
             </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="bbg-ca-iA2"/>
+            </connections>
             <point key="canvasLocation" x="258" y="261.5"/>
         </window>
-        <customObject id="Pj5-zv-GP0" customClass="ResultsCell" customModule="Ocean_Vessels" customModuleProvider="target">
-            <connections>
-                <outlet property="nameLabel" destination="MmT-qB-lLP" id="OAZ-V5-zIz"/>
-                <outlet property="openButton" destination="JoP-dV-nkV" id="i7p-OL-J1X"/>
-                <outlet property="ownerLabel" destination="BLg-af-qS6" id="QAt-8b-TuO"/>
-            </connections>
-        </customObject>
     </objects>
 </document>
