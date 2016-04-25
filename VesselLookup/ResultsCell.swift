@@ -14,6 +14,7 @@ class ResultsCell: NSTableCellView {
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var ownerLabel: NSTextField!
     @IBOutlet weak var openButton: NSButton!
+    @IBOutlet weak var sourceLabel: NSTextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

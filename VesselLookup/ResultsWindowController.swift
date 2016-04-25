@@ -35,7 +35,18 @@ class ResultsWindowController: NSWindowController, NSTableViewDataSource, NSTabl
         cell.nameLabel.stringValue = vesselResults![row].name
         cell.ownerLabel.stringValue = vesselResults![row].owner
         cell.openButton.tag = row
+        cell.sourceLabel.stringValue = sourceStringFromId(vesselResults![row].sourceString)
         return cell
+    }
+    
+    func sourceStringFromId(sourceId: String) -> String {
+        let realm = try! Realm()
+        let source = realm.objects(Source).filter("sourceString == %@",sourceId).first
+        if let sData = source {
+            return sData.title
+        } else {
+            return ""
+        }
     }
 
     @IBAction func openAction(sender: NSButton) {
