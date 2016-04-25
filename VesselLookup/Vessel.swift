@@ -27,6 +27,7 @@ class Vessel: Object {
         self.name = name
         self.owner = owner
         self.type = type
+        self.sourceString = sourceString
     }
     
 //    override static func primaryKey() -> String? {
@@ -71,10 +72,11 @@ class Source: Object {
             let loaded = NSUserDefaults.standardUserDefaults().boolForKey("initial").boolValue
             
             if !loaded {
-                notify(infoStr: "Deleting Old Objects")
+                notify(infoStr: "")
                 try! realm.write({
-                    realm.deleteAll() //start this off right.
+                    realm.deleteAll()
                 })
+                
                 notify(infoStr: "Staring Importing")
                 
                 insertSources()

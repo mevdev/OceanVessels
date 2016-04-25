@@ -26,8 +26,8 @@ class VesselWindowController: NSWindowController, NSWindowDelegate {
         if let ves = vessel {
         vesselText.stringValue = ves.name
         ownerText.stringValue = ves.owner
-        let source = getSource(ves.sourceString)
-        sourceText.stringValue = source!.title
+        let sourceTitle = "" //getSource(ves.sourceString)
+        sourceText.stringValue = sourceTitle
         var paramsText = ""
             for p in ves.params {
                 paramsText += "\(p.title):  \(p.value)\n"
