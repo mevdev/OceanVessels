@@ -717,21 +717,21 @@
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xJ-la-Izr">
                         <rect key="frame" x="278" y="190" width="66" height="18"/>
-                        <buttonCell key="cell" type="check" title="CCSBT" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WY2-AN-4Wi">
+                        <buttonCell key="cell" type="check" title="CCSBT" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="WY2-AN-4Wi">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-wC-B9h">
                         <rect key="frame" x="278" y="170" width="45" height="18"/>
-                        <buttonCell key="cell" type="check" title="FFA" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ep2-0K-HVi">
+                        <buttonCell key="cell" type="check" title="FFA" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="Ep2-0K-HVi">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-TR-blQ">
                         <rect key="frame" x="278" y="150" width="58" height="18"/>
-                        <buttonCell key="cell" type="check" title="EURO" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qso-QB-gAV">
+                        <buttonCell key="cell" type="check" title="EURO" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="Qso-QB-gAV">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -748,7 +748,7 @@
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ouD-vD-dko">
                         <rect key="frame" x="95" y="63" width="322" height="27"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="ub3-EG-F6a">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="ub3-EG-F6a">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

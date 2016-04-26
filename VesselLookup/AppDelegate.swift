@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         firstLaunch()
         checkMigration()
-//        Source.importAllFiles() //files are pre-loaded.
+//  Source.importAllFiles() //files are pre-loaded.
 
     }
 
@@ -30,11 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let loaded = NSUserDefaults.standardUserDefaults().boolForKey("first").boolValue
         if !loaded {
             //load up the saved realm.
-            
             // copy over old data files for migration
             let defaultURL = Realm.Configuration.defaultConfiguration.fileURL!
-//            let defaultParentURL = defaultURL.URLByDeletingLastPathComponent
-            
             if let v0URL = bundleURL("fish_compressed") {
                 do {
                     try NSFileManager.defaultManager().removeItemAtURL(defaultURL)
