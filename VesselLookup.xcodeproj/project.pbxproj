@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		802DC7B51CCE9DFE00674357 /* VesselInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802DC7B41CCE9DFE00674357 /* VesselInfoWindow.xib */; };
 		8040BA951CCDFA2A00FC7EB3 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040BA941CCDFA2A00FC7EB3 /* ResultsCell.swift */; };
+		8067B7CC1CCFD85700E67849 /* fish_compressed.realm in Resources */ = {isa = PBXBuildFile; fileRef = 8067B7CB1CCFD85700E67849 /* fish_compressed.realm */; };
 		80BA46751CCBE173001A31A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA46741CCBE173001A31A2 /* AppDelegate.swift */; };
 		80BA46771CCBE173001A31A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BA46761CCBE173001A31A2 /* Assets.xcassets */; };
 		80BA467A1CCBE173001A31A2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BA46781CCBE173001A31A2 /* MainMenu.xib */; };
@@ -31,6 +32,7 @@
 		3438C52C6822E27E73A0D56B /* Pods-VesselLookup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VesselLookup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VesselLookup/Pods-VesselLookup.debug.xcconfig"; sourceTree = "<group>"; };
 		802DC7B41CCE9DFE00674357 /* VesselInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VesselInfoWindow.xib; sourceTree = "<group>"; };
 		8040BA941CCDFA2A00FC7EB3 /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		8067B7CB1CCFD85700E67849 /* fish_compressed.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish_compressed.realm; sourceTree = "<group>"; };
 		80BA46711CCBE173001A31A2 /* Ocean Vessels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ocean Vessels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BA46741CCBE173001A31A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80BA46761CCBE173001A31A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		80BA46901CCC9D62001A31A2 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				8067B7CB1CCFD85700E67849 /* fish_compressed.realm */,
 				80BA46911CCC9D7B001A31A2 /* ALASKA.csv */,
 				80BA46921CCC9D7B001A31A2 /* ccsbt_carrier_vessels.csv */,
 				80BA46931CCC9D7B001A31A2 /* ccsbt_fishing_vessels.csv */,
@@ -239,6 +242,7 @@
 				80BA469F1CCC9D7B001A31A2 /* IOTC.csv in Resources */,
 				80BA469D1CCC9D7B001A31A2 /* FFA_GOODSTANDING.csv in Resources */,
 				80BA469A1CCC9D7B001A31A2 /* ccsbt_carrier_vessels.csv in Resources */,
+				8067B7CC1CCFD85700E67849 /* fish_compressed.realm in Resources */,
 				80BA467A1CCBE173001A31A2 /* MainMenu.xib in Resources */,
 				80BA469B1CCC9D7B001A31A2 /* ccsbt_fishing_vessels.csv in Resources */,
 				80BA46A01CCC9D7B001A31A2 /* WCPFC.csv in Resources */,

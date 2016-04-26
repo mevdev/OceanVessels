@@ -16,14 +16,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        firstLaunch()
         checkMigration()
-        
-        Source.importAllFiles()
+//        Source.importAllFiles() //files are pre-loaded.
 
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+    }
+    
+    func firstLaunch() {
+        let loaded = NSUserDefaults.standardUserDefaults().boolForKey("first").boolValue
+        if !loaded {
+            //load up the saved realm.
+            
+            // copy over old data files for migration
+            let defaultURL = Realm.Configuration.defaultConfiguration.fileURL!
+//            let defaultParentURL = defaultURL.URLByDeletingLastPathComponent
+            
+            if let v0URL = bundleURL("fish_compressed") {
+                do {
+                    try NSFileManager.defaultManager().removeItemAtURL(defaultURL)
+                    try NSFileManager.defaultManager().copyItemAtURL(v0URL, toURL: defaultURL)
+                    print("db replaced")
+                } catch {}
+            }
+            
+            let prefs = NSUserDefaults.standardUserDefaults()
+            prefs.setBool(true, forKey: "initial")
+            prefs.synchronize()
+        }
     }
 
     func checkMigration() {
@@ -40,5 +63,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let realm = try! Realm()
     }
 
+    func bundleURL(name: String) -> NSURL? {
+        return NSBundle.mainBundle().URLForResource(name, withExtension: "realm")
+    }
 }
 
